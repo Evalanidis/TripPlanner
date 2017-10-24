@@ -1,3 +1,9 @@
+/*
+* @author Valanidis Efstathios
+* @literal evalanidis@gmail.com
+* @since 24/10/2017
+* */
+
 import java.util.Scanner;
 import static java.lang.Math.abs;
 
@@ -9,7 +15,7 @@ public class TripPlanner {
     static String name,destination,currencySymbol;
     static int days,hours,sumHours,sumMinutes,sumSeconds,noon, midnight;
     static float money,moneyPerDayUSD,moneyConversion,moneyRate,moneyPerDay,squareArea,miles;
-    static double latitude1,latitude2,longitude1,longitude2,dLat,dLong,hav1,hav2,sum,d;
+    static double lat1,lat2,latitude1,latitude2,longitude1,longitude2,dLat,dLong,hav1,hav2,sum,d;
 
     public static void main(String[] args){
         greeting();
@@ -108,6 +114,9 @@ public class TripPlanner {
         latitude2 = input.nextDouble();
         System.out.print("What is the longitude of your destination in degrees? ");
         longitude2 = input.nextDouble();
+        
+        lat1=latitude1;
+        lat2=latitude2;
 
         dLat = Math.toRadians(latitude2 - latitude1);
         dLong = Math.toRadians(longitude2 - longitude1);
@@ -121,8 +130,8 @@ public class TripPlanner {
         d = 2 * Math.atan2(Math.sqrt(sum),Math.sqrt(1-sum));
         d = (float)(d * earthRadius);
 
-        System.out.print("Your location's latitude is "+latitude1+" and longitude is "+longitude1+"\n");
-        System.out.print("Your destination's latitude is "+latitude2+" and longitude is "+longitude2+"\n");
+        System.out.print("Your location's latitude is "+lat1+" and longitude is "+longitude1+"\n");
+        System.out.print("Your destination's latitude is "+lat2+" and longitude is "+longitude2+"\n");
         System.out.printf("Using the Haversive formula the distance between your location and your destination is %.2f km",d);
 
     }
