@@ -7,3 +7,5 @@ Inside the program you will find 5 methods:
 3) timeDifference
 4) countryArea
 5) haversiveFormula
+
+The project was created for a course in Edx by Microsoft.
